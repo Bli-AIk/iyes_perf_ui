@@ -15,11 +15,14 @@ pub mod prelude {
         PerfUiEntryFrameTime,
         PerfUiEntryFrameTimeWorst,
         PerfUiEntryFrameCount,
+    };
+
+    pub use super::system_resources::{
         PerfUiEntryEntityCount,
     };
 
     #[cfg(feature = "sysinfo")]
-    pub use super::diagnostics::{
+    pub use super::system_resources::{
         PerfUiEntryCpuUsage,
         PerfUiEntryMemUsage,
         PerfUiEntrySystemCpuUsage,
@@ -50,6 +53,7 @@ pub mod prelude {
 
 pub mod diagnostics;
 pub mod render;
+pub mod system_resources;
 pub mod time;
 
 #[cfg(feature = "window")]
