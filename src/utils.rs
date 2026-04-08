@@ -60,6 +60,7 @@ impl ColorGradient {
     }
 
     /// Preset constructor: Red-Yellow-Green between the specified low-mid-high values.
+    #[allow(clippy::result_unit_err)]
     pub fn new_preset_ryg(low: f32, mid: f32, high: f32) -> Result<Self, ()> {
         if low.is_nan() || mid.is_nan() || high.is_nan() || low > mid || mid > high {
             return Err(());
@@ -74,6 +75,7 @@ impl ColorGradient {
     }
 
     /// Preset constructor: Green-Yellow-Red between the specified low-mid-high values.
+    #[allow(clippy::result_unit_err)]
     pub fn new_preset_gyr(low: f32, mid: f32, high: f32) -> Result<Self, ()> {
         if low.is_nan() || mid.is_nan() || high.is_nan() || low > mid || mid > high {
             return Err(());
